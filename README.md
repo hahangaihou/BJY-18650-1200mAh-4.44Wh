@@ -1,4 +1,4 @@
-![Uploading Group1.svg…]()
+<img width="393" height="1698" alt="Group1" src="https://github.com/user-attachments/assets/16008b78-0931-4ce4-9337-8b334290e0fa" />
 <svg width="393" height="1698" viewBox="0 0 393 1698" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="393" height="1698" fill="#EDEAEA"/>
 <rect x="22" y="21" width="350" height="87" rx="10" fill="#8596E9"/>
