@@ -2,26 +2,406 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- 视口设置保留即可 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BJY 18650 1200mAh Battery</title>
+<title>BJY 18650 Lithium-ion Battery</title>
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  background: #ffffff;
-  /* 删除了 flex 居中，因为对于超长图，垂直居中会导致滑动查看非常困难，且容易错位 */
-}
+  /* ================= 基础设置 ================= */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: #f2f2f2; /* 页面浅灰背景 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    width: 100%;
+    max-width: 600px; /* 限制最大宽度，电脑上看也不会太宽 */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 各个模块之间的间距 */
+  }
 
-img {
-  width: 100%;       /* 图片宽度强制 100% 占满屏幕宽度 */
-  height: auto;      /* 高度自动，保持原图比例 */
-  display: block;    /* 消除图片底部的默认空白间隙 */
-  max-width: 100%;   /* 防止溢出 */
-}
+  /* ================= 通用卡片样式 ================= */
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  .text-muted {
+    color: #777;
+    font-size: 14px;
+  }
+  .row {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .col-label {
+    width: 100px;
+    color: #777;
+    flex-shrink: 0;
+  }
+  .col-value {
+    color: #333;
+    word-break: break-all;
+  }
+
+  /* ================= 顶部蓝色标题 ================= */
+  .header-banner {
+    background-color: #7b8df4;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    border-radius: 12px;
+  }
+  .header-banner h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+  }
+  .header-banner p {
+    font-size: 16px;
+  }
+
+  /* ================= 表格样式 ================= */
+  .table-container {
+    overflow-x: auto; /* 防止表格过宽撑破屏幕 */
+    margin-top: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  /* 紫色有害物质表 */
+  .table-purple {
+    background-color: #f4eaff;
+    color: #444;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .table-purple th, .table-purple td {
+    border: 1px solid #e0cef5;
+    padding: 10px 5px;
+  }
+  .table-purple th {
+    background-color: #e8d8fa;
+    font-weight: normal;
+  }
+
+  /* 蓝色化学成分表 */
+  .table-blue {
+    background-color: #eaf2fb;
+    color: #444;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .table-blue th {
+    background-color: #b3cef0;
+    padding: 12px 10px;
+    border: 1px solid #a3c2e8;
+    font-weight: normal;
+  }
+  .table-blue td {
+    padding: 10px;
+    border-bottom: 1px solid #d0e1f5;
+    border-left: 1px solid #d0e1f5;
+    border-right: 1px solid #d0e1f5;
+  }
+  .table-blue td:last-child {
+    text-align: center;
+  }
+
+  /* ================= 灭火剂胶囊 ================= */
+  .agent-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .agent-pill {
+    flex: 1;
+    text-align: center;
+    background-color: #e6f7e6;
+    color: #2e7d32;
+    padding: 8px 0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ================= 底部图标 ================= */
+  .bottom-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .bottom-icons svg {
+    width: 45px;
+    height: 45px;
+    fill: #000;
+  }
+  .footer-text {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  /* ================= 附加的 3 个卡片 ================= */
+  .card-green { background-color: #e9f7ef; color: #1e7e46; }
+  .card-yellow { background-color: #fdf4cd; color: #8c6a08; }
+  .card-purple { background-color: #f6f3fc; color: #4a4458; }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .arrow-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid currentColor;
+    margin-right: 10px;
+  }
+  .arrow-down { transform: rotate(90deg); }
+  .warning-icon { margin-right: 6px; }
+  
+  .card-yellow ol {
+    margin: 10px 0 0 0;
+    padding-left: 25px;
+    color: #7a5f11;
+    font-size: 14px;
+  }
+  .card-yellow li { margin-bottom: 4px; }
+  
+  .card-purple h3 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    color: #3b3645;
+  }
+  .card-purple p {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 13px;
+  }
+  .view-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e4e5ff;
+    color: #5b4fc8;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .view-btn svg {
+    width: 14px;
+    height: 14px;
+    margin-right: 6px;
+    fill: currentColor;
+  }
 </style>
 </head>
 <body>
-<img src="./design/assets/Group1.svg" alt="BJY 18650 Battery Drawing">
+
+<div class="container">
+  <!-- 1. 顶部标题 -->
+  <div class="header-banner">
+    <h1>BJY 18650</h1>
+    <p>Lithium-ion Battery</p>
+  </div>
+
+  <!-- 2. 制造商信息 -->
+  <div class="card">
+    <div class="section-title">Manufacturer</div>
+    <div style="font-weight: 600; font-size: 15px; margin-bottom: 5px;">Shenzhen Baijiaying Technology Co., Ltd.</div>
+    <div class="text-muted" style="margin-bottom: 10px;">
+      4/F, Building 3, No.8 Shitoushan Industrial Zone, Shiyan Street, Bao'an District, Shenzhen, China
+    </div>
+    <div class="row"><div class="col-label">Mobile:</div><div class="col-value">+86 13652427727</div></div>
+    <div class="row"><div class="col-label">Contact:</div><div class="col-value">Chen Ganghua</div></div>
+    <div class="row"><div class="col-label">Email:</div><div class="col-value">cgh628628@126.com</div></div>
+    <div class="row"><div class="col-label">Website:</div><div class="col-value">https://bjyldcgys.1688.com</div></div>
+  </div>
+
+  <!-- 3. 电池 ID 和制造信息 -->
+  <div class="card">
+    <div class="section-title">Battery ID</div>
+    <div class="row"><div class="col-label">Product</div><div class="col-value">Lithium-ion Battery</div></div>
+    <div class="row"><div class="col-label">Model</div><div class="col-value">BJY 18650</div></div>
+    <div class="row"><div class="col-label">Batch</div><div class="col-value">202611</div></div>
+    
+    <div style="height: 1px; background: #eee; margin: 15px 0;"></div>
+    
+    <div class="section-title">Manufacturing</div>
+    <div class="row"><div class="col-label">Place</div><div class="col-value">Dongguan, Guangdong, China</div></div>
+    <div class="row"><div class="col-label">Date</div><div class="col-value">November 2026</div></div>
+  </div>
+
+  <!-- 4. 规格参数 -->
+  <div class="card">
+    <div class="section-title">Specifications</div>
+    <div class="row"><div class="col-label">Weight</div><div class="col-value">39.8g</div></div>
+    <div class="row"><div class="col-label">Size (mm) L*W</div><div class="col-value">18.6*66.6 (mm)</div></div>
+    <div class="row"><div class="col-label">Voltage</div><div class="col-value">3.7 V</div></div>
+    <div class="row"><div class="col-label">Capacity</div><div class="col-value">1200mAh 4.44Wh</div></div>
+    <div class="row"><div class="col-label">Chemistry</div><div class="col-value">Lithium Manganate</div></div>
+  </div>
+
+  <!-- 5. 有害物质表格 -->
+  <div class="card">
+    <div class="section-title">Hazardous Substances</div>
+    <div class="table-container">
+      <table class="table-purple">
+        <tr>
+          <th rowspan="2">Test Items</th>
+          <th colspan="2">Regulatory requirement (%)</th>
+          <th rowspan="2">Results<br>(%)</th>
+          <th rowspan="2">MDL<br>(%)</th>
+        </tr>
+        <tr>
+          <th>Maximum<br>Permissible<br>Limit</th>
+          <th>Label<br>Limit</th>
+        </tr>
+        <tr>
+          <td>Lead (Pb)</td>
+          <td>0.01</td>
+          <td>0.004</td>
+          <td>ND</td>
+          <td>0.0002</td>
+        </tr>
+        <tr>
+          <td>Cadmium (Cd)</td>
+          <td>0.002</td>
+          <td>0.002</td>
+          <td>ND</td>
+          <td>0.0002</td>
+        </tr>
+        <tr>
+          <td>Mercury (Hg)</td>
+          <td>0.0005</td>
+          <td>NA</td>
+          <td>ND</td>
+          <td>0.0002</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 6. 灭火剂 -->
+  <div class="card">
+    <div class="section-title">Extinguishing Agents</div>
+    <div class="agent-row">
+      <div class="agent-pill">Water</div>
+      <div class="agent-pill">Dry Sand</div>
+    </div>
+  </div>
+
+  <!-- 7. 化学成分表格 -->
+  <div class="card">
+    <div class="section-title" style="line-height: 1.3; margin-bottom: 15px;">Chemical Composition (Critical Raw Materials>0.1%)</div>
+    <div class="table-container">
+      <table class="table-blue">
+        <tr>
+          <th style="text-align: left; padding-left: 15px;">Chemical Name</th>
+          <th>Concentration or<br>concentration ranges (%)</th>
+        </tr>
+        <tr><td style="text-align: left; padding-left: 15px;">Lithium</td><td>32.00</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;">Fe</td><td>28.00</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;">Graphite</td><td>15.00</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;">Aluminium</td><td>3.00</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;">DMC</td><td>10.00</td></tr>
+        <tr><td style="text-align: left; padding-left: 15px;">Copper</td><td>5.00</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 8. 底部图标区 -->
+  <div class="bottom-icons">
+    <!-- 垃圾桶图标 -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 4h-2.5l-.7-1.4H11.2L10.5 4H8v2h8V4zm-1 16H9c-1.1 0-2-.9-2-2V7h10v11c0 1.1-.9 2-2 2zM8 20h1.5L8.2 9H6.5l1.5 11zM14.5 20H16l1.5-11h-1.7l-1.3 11z"/>
+      <path d="M4 4L20 20M20 4L4 20" stroke="#000" stroke-width="2"/>
+    </svg>
+    <!-- CE 图标 -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-9.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5h2c0-2.49-2.01-4.5-4.5-4.5S7.5 8.01 7.5 10.5s2.01 4.5 4.5 4.5c2.49 0 4.5-2.01 4.5-4.5h-2c0 1.38-1.12 2.5-2.5 2.5s-2.5-1.12-2.5-2.5z"/>
+    </svg>
+    <!-- 回收图标 -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L2 22h20L12 2zm0 3.5l7.5 15h-15L12 5.5z"/>
+    </svg>
+  </div>
+  
+  <div class="footer-text">
+    Shenzhen Baijiaying Technology Co., Ltd.<br>
+    Compliant with Regulation (EU) 2023/1542 (EU Battery Regulation)
+  </div>
+
+  <!-- ================= 新增的 3 个交互卡片 ================= -->
+  
+  <!-- 绿色卡片 -->
+  <div class="card card-green" style="margin-top: 15px;">
+    <div class="card-header">
+      <span class="arrow-icon"></span>
+      Information Regarding Prevention and Management of Waste Lithium-Ion Batteries
+    </div>
+  </div>
+
+  <!-- 黄色卡片 -->
+  <div class="card card-yellow">
+    <div class="card-header">
+      <span class="arrow-icon arrow-down"></span>
+      <span class="warning-icon">⚠️</span>
+      Safety Warning
+    </div>
+    <ol>
+      <li>Keep away from high temperatures.</li>
+      <li>Do not use if submerged in water.</li>
+      <li>Do not open, crush, pierce, or burn.</li>
+      <li>Stop use if swollen or damaged.</li>
+    </ol>
+  </div>
+
+  <!-- 紫色卡片 -->
+  <div class="card card-purple">
+    <h3>Declaration of Conformity</h3>
+    <p>This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.</p>
+    <button class="view-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
+      </svg>
+      View
+    </button>
+  </div>
+
+</div>
+
 </body>
 </html>
