@@ -12,7 +12,7 @@
     padding: 0;
   }
   body {
-    background-color: #f2f2f2; /* 页面浅灰背景 */
+    background-color: #f2f2f2;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #333;
     line-height: 1.5;
@@ -22,10 +22,10 @@
   }
   .container {
     width: 100%;
-    max-width: 600px; /* 限制最大宽度，电脑上看也不会太宽 */
+    max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* 各个模块之间的间距 */
+    gap: 15px;
   }
 
   /* ================= 通用卡片样式 ================= */
@@ -41,24 +41,10 @@
     color: #555;
     margin-bottom: 12px;
   }
-  .text-muted {
-    color: #777;
-    font-size: 14px;
-  }
-  .row {
-    display: flex;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-  .col-label {
-    width: 100px;
-    color: #777;
-    flex-shrink: 0;
-  }
-  .col-value {
-    color: #333;
-    word-break: break-all;
-  }
+  .text-muted { color: #777; font-size: 14px; }
+  .row { display: flex; margin-bottom: 8px; font-size: 14px; }
+  .col-label { width: 100px; color: #777; flex-shrink: 0; }
+  .col-value { color: #333; word-break: break-all; }
 
   /* ================= 顶部蓝色标题 ================= */
   .header-banner {
@@ -68,84 +54,27 @@
     padding: 25px 20px;
     border-radius: 12px;
   }
-  .header-banner h1 {
-    font-size: 28px;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-  }
-  .header-banner p {
-    font-size: 16px;
-  }
+  .header-banner h1 { font-size: 28px; margin-bottom: 5px; letter-spacing: 1px; }
+  .header-banner p { font-size: 16px; }
 
   /* ================= 表格样式 ================= */
-  .table-container {
-    overflow-x: auto; /* 防止表格过宽撑破屏幕 */
-    margin-top: 10px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-    text-align: center;
-  }
+  .table-container { overflow-x: auto; margin-top: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; text-align: center; }
   
-  /* 紫色有害物质表 */
-  .table-purple {
-    background-color: #f4eaff;
-    color: #444;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .table-purple th, .table-purple td {
-    border: 1px solid #e0cef5;
-    padding: 10px 5px;
-  }
-  .table-purple th {
-    background-color: #e8d8fa;
-    font-weight: normal;
-  }
+  .table-purple { background-color: #f4eaff; color: #444; border-radius: 8px; overflow: hidden; }
+  .table-purple th, .table-purple td { border: 1px solid #e0cef5; padding: 10px 5px; }
+  .table-purple th { background-color: #e8d8fa; font-weight: normal; }
 
-  /* 蓝色化学成分表 */
-  .table-blue {
-    background-color: #eaf2fb;
-    color: #444;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .table-blue th {
-    background-color: #b3cef0;
-    padding: 12px 10px;
-    border: 1px solid #a3c2e8;
-    font-weight: normal;
-  }
-  .table-blue td {
-    padding: 10px;
-    border-bottom: 1px solid #d0e1f5;
-    border-left: 1px solid #d0e1f5;
-    border-right: 1px solid #d0e1f5;
-  }
-  .table-blue td:last-child {
-    text-align: center;
-  }
+  .table-blue { background-color: #eaf2fb; color: #444; border-radius: 8px; overflow: hidden; }
+  .table-blue th { background-color: #b3cef0; padding: 12px 10px; border: 1px solid #a3c2e8; font-weight: normal; }
+  .table-blue td { padding: 10px; border-bottom: 1px solid #d0e1f5; border-left: 1px solid #d0e1f5; border-right: 1px solid #d0e1f5; }
+  .table-blue td:last-child { text-align: center; }
 
   /* ================= 灭火剂胶囊 ================= */
-  .agent-row {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
-  }
-  .agent-pill {
-    flex: 1;
-    text-align: center;
-    background-color: #e6f7e6;
-    color: #2e7d32;
-    padding: 8px 0;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-  }
+  .agent-row { display: flex; gap: 20px; margin-top: 10px; }
+  .agent-pill { flex: 1; text-align: center; background-color: #e6f7e6; color: #2e7d32; padding: 8px 0; border-radius: 20px; font-size: 14px; font-weight: 500; }
 
-  /* ================= 底部图标 ================= */
+  /* ================= 底部图标区样式 ================= */
   .bottom-icons {
     display: flex;
     justify-content: space-around;
@@ -153,11 +82,11 @@
     background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
+    margin-top: 15px; /* 与上方内容拉开一点距离 */
   }
   .bottom-icons svg {
     width: 45px;
     height: 45px;
-    fill: #000;
   }
   .footer-text {
     text-align: center;
@@ -165,67 +94,53 @@
     color: #999;
     line-height: 1.6;
     margin-top: 10px;
+    margin-bottom: 20px; /* 保证页面最底部有留白 */
   }
 
-  /* ================= 附加的 3 个卡片 ================= */
-  .card-green { background-color: #e9f7ef; color: #1e7e46; }
-  .card-yellow { background-color: #fdf4cd; color: #8c6a08; }
-  .card-purple { background-color: #f6f3fc; color: #4a4458; }
-  
-  .card-header {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    font-size: 14px;
+  /* ================= 附加的折叠卡片样式 ================= */
+  details.card { cursor: pointer; padding: 0; }
+  summary.card-header {
+    display: flex; align-items: center; font-weight: 600; font-size: 14px;
+    padding: 15px 20px; list-style: none;
   }
+  summary::-webkit-details-marker { display: none; }
   .arrow-icon {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 6px solid currentColor;
-    margin-right: 10px;
+    display: inline-block; width: 0; height: 0;
+    border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+    border-left: 6px solid currentColor; margin-right: 10px;
+    transition: transform 0.3s ease; flex-shrink: 0;
   }
-  .arrow-down { transform: rotate(90deg); }
-  .warning-icon { margin-right: 6px; }
+  details[open] .arrow-icon { transform: rotate(90deg); }
+  .card-content { padding: 0 20px 15px 40px; font-size: 14px; cursor: text; }
+
+  /* 颜色设定 */
+  .card-green { background-color: #e9f7ef; color: #1e7e46; border-radius: 12px; }
+  .card-yellow { background-color: #fdf4cd; color: #8c6a08; border-radius: 12px; }
   
-  .card-yellow ol {
-    margin: 10px 0 0 0;
-    padding-left: 25px;
-    color: #7a5f11;
-    font-size: 14px;
-  }
+  /* 绿色卡片长文本专属样式 */
+  .card-green .card-content h4 { margin: 15px 0 5px 0; font-size: 14px; color: #155f33; }
+  .card-green .card-content p { margin-bottom: 10px; color: #333; font-size: 13px; }
+  .card-green .card-content ul { margin: 5px 0 15px 0; padding-left: 20px; color: #444; font-size: 13px; }
+  .card-green .card-content li { margin-bottom: 6px; }
+
+  /* 黄色卡片列表样式 */
+  .card-yellow ol { margin: 0; padding-left: 15px; color: #7a5f11; }
   .card-yellow li { margin-bottom: 4px; }
+  .warning-icon { margin-right: 6px; }
+
+  /* 紫色卡片 */
+  .card-purple { background-color: #f6f3fc; color: #4a4458; }
+  .card-purple h3 { margin: 0 0 10px 0; font-size: 15px; color: #3b3645; }
+  .card-purple p { margin: 0 0 15px 0; color: #666; font-size: 13px; }
   
-  .card-purple h3 {
-    margin: 0 0 10px 0;
-    font-size: 15px;
-    color: #3b3645;
-  }
-  .card-purple p {
-    margin: 0 0 15px 0;
-    color: #666;
-    font-size: 13px;
-  }
+  /* 按钮 */
   .view-btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: #e4e5ff;
-    color: #5b4fc8;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
+    display: inline-flex; align-items: center; background-color: #e4e5ff; color: #5b4fc8;
+    border: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    text-decoration: none; cursor: pointer; transition: background 0.2s;
   }
-  .view-btn svg {
-    width: 14px;
-    height: 14px;
-    margin-right: 6px;
-    fill: currentColor;
-  }
+  .view-btn:hover { background-color: #d5d7ff; }
+  .view-btn svg { width: 14px; height: 14px; margin-right: 6px; fill: currentColor; }
 </style>
 </head>
 <body>
@@ -289,27 +204,9 @@
           <th>Maximum<br>Permissible<br>Limit</th>
           <th>Label<br>Limit</th>
         </tr>
-        <tr>
-          <td>Lead (Pb)</td>
-          <td>0.01</td>
-          <td>0.004</td>
-          <td>ND</td>
-          <td>0.0002</td>
-        </tr>
-        <tr>
-          <td>Cadmium (Cd)</td>
-          <td>0.002</td>
-          <td>0.002</td>
-          <td>ND</td>
-          <td>0.0002</td>
-        </tr>
-        <tr>
-          <td>Mercury (Hg)</td>
-          <td>0.0005</td>
-          <td>NA</td>
-          <td>ND</td>
-          <td>0.0002</td>
-        </tr>
+        <tr><td>Lead (Pb)</td><td>0.01</td><td>0.004</td><td>ND</td><td>0.0002</td></tr>
+        <tr><td>Cadmium (Cd)</td><td>0.002</td><td>0.002</td><td>ND</td><td>0.0002</td></tr>
+        <tr><td>Mercury (Hg)</td><td>0.0005</td><td>NA</td><td>ND</td><td>0.0002</td></tr>
       </table>
     </div>
   </div>
@@ -342,63 +239,119 @@
     </div>
   </div>
 
-  <!-- 8. 底部图标区 -->
+  <!-- ================= 折叠卡片 ================= -->
+  
+  <!-- 绿色卡片 -->
+  <details class="card card-green">
+    <summary class="card-header">
+      <span class="arrow-icon"></span>
+      Information Regarding Prevention and Management of Waste Lithium-Ion Batteries
+    </summary>
+    <div class="card-content">
+      <h4>a) Waste Prevention</h4>
+      <p>To help prevent battery waste and extend battery service life:</p>
+      <ul>
+        <li>Charge and use the battery only as described in this manual.</li>
+        <li>Store the product in a cool, dry place away from direct sunlight, excessive heat, moisture and corrosive environments.</li>
+        <li>Avoid dropping, crushing, puncturing, dismantling, modifying or exposing the battery to excessive mechanical shock.</li>
+        <li>Do not expose the battery to fire or temperatures exceeding the specified operating or storage limits.</li>
+        <li>Proper use, charging and storage will help maximise battery life and reduce waste.</li>
+      </ul>
+      <h4>b) Separate Collection of Waste Batteries</h4>
+      <p>Do not dispose of lithium-ion batteries with household waste.</p>
+      <ul>
+        <li>At the end of the battery's service life, dispose of it through designated battery collection points or authorised recycling facilities in accordance with local regulations.</li>
+        <li>Where available, use retailer, municipal or producer take-back schemes for waste batteries.</li>
+      </ul>
+      <h4>c) Collection, Take-Back, Re-use, Repurposing and Treatment</h4>
+      <p>Waste lithium-ion batteries should be collected separately to enable preparation for re-use, repurposing where appropriate, recycling and material recovery.</p>
+      <ul>
+        <li>Separate collection helps conserve valuable raw materials and reduces environmental impacts.</li>
+        <li>Collection and treatment services are available through authorised collection points and recycling facilities.</li>
+      </ul>
+      <h4>d) Safety Instructions for Handling Waste Batteries</h4>
+      <p>Handle waste batteries carefully to prevent short circuits, fire or leakage.</p>
+      <ul>
+        <li>Do not crush, puncture, dismantle, incinerate or expose waste batteries to excessive heat.</li>
+        <li>If the battery is damaged, swollen, leaking or overheating, discontinue use immediately and dispose of it through an authorised collection facility.</li>
+        <li>Where practical, cover exposed battery terminals with insulating tape before disposal.</li>
+        <li>Store waste batteries in a cool, dry place away from metal objects and combustible materials until they are recycled.</li>
+      </ul>
+      <h4>e) Meaning of Labels and Symbols</h4>
+      <ul>
+        <li><strong>Crossed-out wheeled bin symbol:</strong> Indicates that the battery must not be disposed of with household waste and must be collected separately for recycling.</li>
+        <li><strong>CE marking:</strong> Indicates that the product complies with the applicable European Union legislation and conformity assessment requirements.</li>
+      </ul>
+      <h4>f) Environmental and Health Impact of Hazardous Substances</h4>
+      <p>Lithium-ion batteries contain substances that may present risks to human health and the environment if improperly handled or disposed of.</p>
+      <ul>
+        <li>Never dispose of batteries in fire, household waste or the natural environment.</li>
+        <li>Proper collection and recycling help prevent environmental pollution, reduce safety risks and enable the recovery of valuable materials for future use.</li>
+      </ul>
+    </div>
+  </details>
+
+  <!-- 黄色卡片 -->
+  <details class="card card-yellow">
+    <summary class="card-header">
+      <span class="arrow-icon"></span>
+      <span class="warning-icon">⚠️</span>
+      Safety Warning
+    </summary>
+    <div class="card-content">
+      <ol>
+        <li>Keep away from high temperatures.</li>
+        <li>Do not use if submerged in water.</li>
+        <li>Do not open, crush, pierce, or burn.</li>
+        <li>Stop use if swollen or damaged.</li>
+      </ol>
+    </div>
+  </details>
+
+  <!-- 紫色卡片 -->
+  <div class="card card-purple">
+    <h3>Declaration of Conformity</h3>
+    <p>This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.</p>
+    <a href="#" target="_blank" class="view-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
+      </svg>
+      View
+    </a>
+  </div>
+
+  <!-- ================= 8. 底部图标与版权文字 (移到了最底部) ================= -->
   <div class="bottom-icons">
-    <!-- 垃圾桶图标 -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 4h-2.5l-.7-1.4H11.2L10.5 4H8v2h8V4zm-1 16H9c-1.1 0-2-.9-2-2V7h10v11c0 1.1-.9 2-2 2zM8 20h1.5L8.2 9H6.5l1.5 11zM14.5 20H16l1.5-11h-1.7l-1.3 11z"/>
-      <path d="M4 4L20 20M20 4L4 20" stroke="#000" stroke-width="2"/>
+    <!-- 1. 标准的 WEEE 打叉垃圾桶标志 -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16v2H4z"/>
+      <path d="M6 6l1 14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-14"/>
+      <path d="M9 10v7M15 10v7"/>
+      <circle cx="9" cy="23" r="1" fill="#000"/>
+      <circle cx="15" cy="23" r="1" fill="#000"/>
+      <path d="M3 3l18 18" stroke-width="2" stroke="#000"/>
     </svg>
-    <!-- CE 图标 -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2.5-9.5c0-1.38 1.12-2.5 2.5-2.5s2.5 1.12 2.5 2.5h2c0-2.49-2.01-4.5-4.5-4.5S7.5 8.01 7.5 10.5s2.01 4.5 4.5 4.5c2.49 0 4.5-2.01 4.5-4.5h-2c0 1.38-1.12 2.5-2.5 2.5s-2.5-1.12-2.5-2.5z"/>
+
+    <!-- 2. 标准的 CE 标志 -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 7.5a5 5 0 1 0 0 9"/>
+      <path d="M14 9.5h4M14 12h3M14 14.5h4"/>
     </svg>
-    <!-- 回收图标 -->
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2L2 22h20L12 2zm0 3.5l7.5 15h-15L12 5.5z"/>
+
+    <!-- 3. 标准的回收循环标志 (莫比乌斯环) -->
+    <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/>
+      <path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/>
+      <path d="M14 16l-3 3 3 3"/>
+      <path d="M8.293 13.596L7.1 9.5l-4.095 1.293"/>
+      <path d="M12.172 5.455l2.125-3.676A1.796 1.796 0 0 1 15.86 1a1.825 1.825 0 0 1 1.568.898l2.125 3.676"/>
+      <path d="M15.342 1.167l-2.653 1.531"/>
     </svg>
   </div>
   
   <div class="footer-text">
     Shenzhen Baijiaying Technology Co., Ltd.<br>
     Compliant with Regulation (EU) 2023/1542 (EU Battery Regulation)
-  </div>
-
-  <!-- ================= 新增的 3 个交互卡片 ================= -->
-  
-  <!-- 绿色卡片 -->
-  <div class="card card-green" style="margin-top: 15px;">
-    <div class="card-header">
-      <span class="arrow-icon"></span>
-      Information Regarding Prevention and Management of Waste Lithium-Ion Batteries
-    </div>
-  </div>
-
-  <!-- 黄色卡片 -->
-  <div class="card card-yellow">
-    <div class="card-header">
-      <span class="arrow-icon arrow-down"></span>
-      <span class="warning-icon">⚠️</span>
-      Safety Warning
-    </div>
-    <ol>
-      <li>Keep away from high temperatures.</li>
-      <li>Do not use if submerged in water.</li>
-      <li>Do not open, crush, pierce, or burn.</li>
-      <li>Stop use if swollen or damaged.</li>
-    </ol>
-  </div>
-
-  <!-- 紫色卡片 -->
-  <div class="card card-purple">
-    <h3>Declaration of Conformity</h3>
-    <p>This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.</p>
-    <button class="view-btn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
-      </svg>
-      View
-    </button>
   </div>
 
 </div>
