@@ -76,20 +76,50 @@
 
   /* ================= 底部图标区样式 ================= */
   .bottom-icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  background-color: #ffffff;
+  padding: 24px 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* 图标统一高度，保持比例 */
+.bottom-icons svg {
+  display: block;
+  height: 42px;
+  width: 50px;
+  flex: 0 1 50px;
+  overflow: visible;
+}
+
+/* CE 标志使用较宽的显示区域 */
+.bottom-icons .ce-icon {
+  width: 66px;
+  flex-basis: 66px;
+  height: 42px;
+}
+
+@media (max-width: 380px) {
+  .bottom-icons {
+    gap: 12px;
+    padding: 20px 12px;
   }
-  /* 统一高度，宽度自适应，确保 SVG 不变形 */
+
   .bottom-icons svg {
-    height: 40px;
-    width: auto;
-    max-width: 50px;
+    width: 42px;
+    flex-basis: 42px;
+    height: 36px;
   }
+
+  .bottom-icons .ce-icon {
+    width: 58px;
+    flex-basis: 58px;
+    height: 36px;
+  }
+}
   .footer-text {
     text-align: center;
     font-size: 11px;
