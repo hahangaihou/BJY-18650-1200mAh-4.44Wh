@@ -354,104 +354,123 @@
     </a>
   </div>
 
-  <!-- ================= 底部图标区 (你提供的完美 SVG 代码) ================= -->
+<!-- ================= 底部图标区 ================= -->
 <div class="bottom-icons">
 
-  <!-- 1. 打叉带轮垃圾桶：示意图，正式使用须核对法规图稿 -->
+  <!-- 1. 打叉带轮垃圾桶
+       示意图；量产前须核对 EU 2023/1542 附件 VI Part B -->
   <svg xmlns="http://www.w3.org/2000/svg"
        viewBox="0 0 100 100"
-       role="img" aria-label="Crossed-out wheeled bin">
+       role="img"
+       aria-label="Crossed-out wheeled bin">
 
-    <g fill="none" stroke="#000"
+    <g fill="none"
+       stroke="#000000"
        stroke-width="3"
        stroke-linecap="round"
        stroke-linejoin="round">
 
       <!-- 桶盖 -->
-      <path d="M31 25 H69"/>
-      <path d="M40 25 V20 H60 V25"/>
+      <path d="M29 25 H71"/>
+      <path d="M39 25 V19 H61 V25"/>
 
       <!-- 桶身 -->
-      <path d="M34 30 L38 69
-               Q39 74 44 74
-               H56 Q61 74 62 69
-               L66 30 Z"/>
+      <path d="M33 30
+               L37 70
+               Q38 75 43 75
+               H57
+               Q62 75 63 70
+               L67 30 Z"/>
 
       <!-- 桶身竖线 -->
-      <path d="M44 38 V66"/>
+      <path d="M43 38 V66"/>
       <path d="M50 38 V66"/>
-      <path d="M56 38 V66"/>
+      <path d="M57 38 V66"/>
 
-      <!-- 底座和车轮 -->
-      <path d="M39 77 H61"/>
-      <circle cx="41" cy="82" r="3"/>
-      <circle cx="59" cy="82" r="3"/>
+      <!-- 底部及车轮 -->
+      <path d="M39 78 H61"/>
+      <circle cx="41" cy="83" r="3"/>
+      <circle cx="59" cy="83" r="3"/>
 
-      <!-- 交叉线 -->
-      <path d="M17 17 L83 83"/>
-      <path d="M83 17 L17 83"/>
+      <!-- 打叉线 -->
+      <path d="M15 15 L85 85"/>
+      <path d="M85 15 L15 85"/>
 
     </g>
   </svg>
 
 
-  <!-- 2. CE：示意绘制，正式使用须核对官方比例 -->
-  <svg xmlns="http://www.w3.org/2000/svg"
+  <!-- 2. CE 标志
+       几何示意图；量产前应替换为经核验的正式 CE 图稿 -->
+  <svg class="ce-icon"
+       xmlns="http://www.w3.org/2000/svg"
        viewBox="0 0 100 60"
-       role="img" aria-label="CE marking">
+       role="img"
+       aria-label="CE marking">
 
-    <g fill="none" stroke="#000"
+    <g fill="none"
+       stroke="#000000"
        stroke-width="4.5"
        stroke-linecap="butt"
        stroke-linejoin="miter">
 
       <!-- C -->
-      <path d="M38 13
-               A20 17 0 1 0 38 47"/>
+      <path d="M37 12
+               A20 18 0 1 0 37 48"/>
 
-      <!-- E：竖线及三条横线 -->
-      <path d="M58 13 V47"/>
-      <path d="M58 13 H82"/>
+      <!-- E：左侧竖线 -->
+      <path d="M58 12 V48"/>
+
+      <!-- E：上、中、下三条横线 -->
+      <path d="M58 12 H82"/>
       <path d="M58 30 H77"/>
-      <path d="M58 47 H82"/>
+      <path d="M58 48 H82"/>
 
     </g>
   </svg>
 
 
-  <!-- 3. 莫比乌斯回收标志：示意图 -->
+  <!-- 3. 莫比乌斯回收标志
+       三箭头循环示意图；不是电池法规规定的单独收集标志 -->
   <svg xmlns="http://www.w3.org/2000/svg"
        viewBox="0 0 100 100"
-       role="img" aria-label="Recycling symbol">
+       role="img"
+       aria-label="Recycling symbol">
 
-    <g fill="#000">
+    <g fill="#000000">
 
       <!-- 上方箭头 -->
-      <path d="M43 12
-               L57 12
-               L57 20
-               L68 20
-               L52 42
-               L36 20
-               L43 20 Z"/>
+      <path d="
+        M43 10
+        L56 10
+        L56 20
+        L67 20
+        L51 42
+        L35 20
+        L43 20
+        Z"/>
 
       <!-- 右下方箭头 -->
-      <path d="M78 43
-               L86 57
-               L79 61
-               L84 70
-               L57 69
-               L68 45
-               L72 52 Z"/>
+      <path d="
+        M78 42
+        L86 55
+        L77 60
+        L83 70
+        L56 69
+        L67 45
+        L71 53
+        Z"/>
 
       <!-- 左下方箭头 -->
-      <path d="M28 75
-               L15 75
-               L15 67
-               L9 67
-               L21 44
-               L38 64
-               L30 64 Z"/>
+      <path d="
+        M37 73
+        L30 86
+        L15 86
+        L15 76
+        L7 76
+        L20 53
+        L36 74
+        Z"/>
 
     </g>
   </svg>
