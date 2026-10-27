@@ -82,11 +82,13 @@
     background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
-    margin-top: 15px; /* 与上方内容拉开一点距离 */
+    margin-top: 15px;
   }
+  /* 统一高度，宽度自适应，确保 SVG 不变形 */
   .bottom-icons svg {
-    width: 45px;
-    height: 45px;
+    height: 40px;
+    width: auto;
+    max-width: 50px;
   }
   .footer-text {
     text-align: center;
@@ -94,10 +96,10 @@
     color: #999;
     line-height: 1.6;
     margin-top: 10px;
-    margin-bottom: 20px; /* 保证页面最底部有留白 */
+    margin-bottom: 20px;
   }
 
-  /* ================= 附加的折叠卡片样式 ================= */
+  /* ================= 折叠卡片样式 ================= */
   details.card { cursor: pointer; padding: 0; }
   summary.card-header {
     display: flex; align-items: center; font-weight: 600; font-size: 14px;
@@ -133,7 +135,7 @@
   .card-purple h3 { margin: 0 0 10px 0; font-size: 15px; color: #3b3645; }
   .card-purple p { margin: 0 0 15px 0; color: #666; font-size: 13px; }
   
-  /* 按钮 */
+  /* 紫色按钮 */
   .view-btn {
     display: inline-flex; align-items: center; background-color: #e4e5ff; color: #5b4fc8;
     border: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500;
@@ -241,7 +243,7 @@
 
   <!-- ================= 折叠卡片 ================= -->
   
-  <!-- 绿色卡片 -->
+  <!-- 1. 绿色卡片 (长文本折叠) -->
   <details class="card card-green">
     <summary class="card-header">
       <span class="arrow-icon"></span>
@@ -291,7 +293,7 @@
     </div>
   </details>
 
-  <!-- 黄色卡片 -->
+  <!-- 2. 黄色卡片 (默认折叠，无 open 属性) -->
   <details class="card card-yellow">
     <summary class="card-header">
       <span class="arrow-icon"></span>
@@ -308,10 +310,12 @@
     </div>
   </details>
 
-  <!-- 紫色卡片 -->
+  <!-- 3. 紫色卡片 (带链接) -->
   <div class="card card-purple">
     <h3>Declaration of Conformity</h3>
     <p>This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.</p>
+    
+    <!-- ⚠️ 注意：请把 href="#" 里面的 # 换成你真实的 PDF 文件链接 -->
     <a href="#" target="_blank" class="view-btn">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
@@ -320,29 +324,55 @@
     </a>
   </div>
 
-  <!-- ================= 8. 底部图标与版权文字 (移到了最底部) ================= -->
+  <!-- ================= 底部图标区 (你提供的完美 SVG 代码) ================= -->
   <div class="bottom-icons">
-    <!-- 1. 标准 WEEE 打叉垃圾桶 (严格按照参考图比例) -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" aria-label="WEEE">
-      <path d="M55.7 8.3l-9.2 9.2H13.4l-5.3 30.8c-.1.8-.2 1.5-.2 2.2 0 7 5.7 12.7 12.7 12.7 7 0 12.7-5.7 12.7-12.7 0-2.1-.5-4.1-1.5-5.9l22.2-22.2-8.3-8.3zM19.5 19.5h17l-2.2 12.9H21.6l-2.1-12.9zm7.7 41.3c-4.8 0-8.7-3.9-8.7-8.7 0-.9.1-1.7.4-2.5h16.6c.2.8.4 1.6.4 2.5 0 4.8-3.9 8.7-8.7 8.7zM46 21l-9.4 9.4 1.3 7.4L49.8 25 46 21zM7.5 57.5h48v5h-48z"/>
-      <path d="M4.3 4.3L59.7 59.7" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+    <!-- 1. WEEE 垃圾桶 -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <g fill="none" stroke="#000000"
+         stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <!-- 垃圾桶盖 -->
+        <path d="M30 25 H70"/>
+        <path d="M40 25 V19 H60 V25"/>
+        <!-- 桶身 -->
+        <path d="M32 30 L37 69 Q38 74 43 74 H57 Q62 74 63 69 L68 30"/>
+        <!-- 桶身竖线 -->
+        <path d="M43 37 V65 M50 37 V65 M57 37 V65"/>
+        <!-- 车轮 -->
+        <circle cx="40" cy="80" r="3"/>
+        <circle cx="60" cy="80" r="3"/>
+        <!-- 交叉线 -->
+        <path d="M15 15 L85 85"/>
+        <path d="M85 15 L15 85"/>
+      </g>
     </svg>
 
-    <!-- 2. 标准 CE 标志 (比例精确，无变形) -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 40" fill="currentColor" aria-label="CE Mark">
-      <path d="M 32.8 8.3 C 27.8 8.3 24 12.5 24 18 C 24 23.5 27.8 27.7 32.8 27.7 C 35.1 27.7 37.1 26.8 38.5 25.4 L 35.4 22.3 C 34.7 23.2 33.8 23.8 32.8 23.8 C 30 23.8 27.7 21 27.7 18 C 27.7 15 30 12.2 32.8 12.2 C 33.8 12.2 34.7 12.8 35.4 13.7 L 38.5 10.6 C 37.1 9.2 35.1 8.3 32.8 8.3 Z" />
-      <path d="M 58.7 10.6 L 58.7 8.3 C 53.2 8.3 48.3 11.9 46.7 17.1 L 35.9 17.1 L 35.9 20.8 L 46.7 20.8 C 48.3 26 53.2 29.6 58.7 29.6 L 58.7 27.3 C 54.3 27.3 50.6 24 49.3 20.8 L 57.9 20.8 L 57.9 17.1 L 49.3 17.1 C 50.6 13.9 54.3 10.6 58.7 10.6 Z" />
+    <!-- 2. CE 标志 -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60">
+      <g fill="none" stroke="#000000" stroke-width="5">
+        <circle cx="29" cy="30" r="20"
+                stroke-dasharray="94.25 31.42"
+                transform="rotate(45 29 30)"/>
+        <path d="M82 10 H66
+                 A20 20 0 0 0 66 50
+                 H82"/>
+      </g>
     </svg>
 
-    <!-- 3. 标准 莫比乌斯回收环 (三个镂空箭头，完美还原参考图) -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor" aria-label="Recycle">
-      <path d="M 47.7 26.2 L 36.3 12.4 C 35.4 11.3 34.2 10.7 32.8 10.7 C 31.4 10.7 30.1 11.3 29.3 12.4 L 24.8 17.9 L 30.5 24.8 L 32.8 22 L 39.4 30 L 43.8 24.5 C 44.3 23.8 44.3 22.9 43.8 22.2 L 47.7 26.2 Z" />
-      <path d="M 20.2 31.2 L 8.8 45 C 7.9 46.1 7.7 47.5 8.2 48.8 C 8.7 50.1 9.8 50.9 11.1 51.1 L 18.4 52.2 L 19.9 43.8 L 16.2 43.3 L 22.8 35.3 L 16.3 27.4 L 20.2 31.2 Z" />
-      <path d="M 50.9 43.8 L 37.5 60.5 C 36.5 61.7 35.1 62.2 33.7 61.9 C 32.3 61.6 31.2 60.6 30.8 59.2 L 28.6 52 L 36.6 49.8 L 37.7 53.4 L 45.9 46.6 L 54.9 50.1 L 50.9 43.8 Z" />
-      <path d="M 56.7 38.7 L 48.3 30.3 C 47.4 29.4 46.1 29.1 44.9 29.4 L 38.3 31 L 40.1 39 L 43.3 38.3 L 45.3 40.3 L 39.4 46.2 L 47.3 48.1 L 51.9 43.6 L 56.7 38.7 Z" />
+    <!-- 3. 回收标志 -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+      <g fill="none" stroke="#000000"
+         stroke-width="5" stroke-linecap="butt" stroke-linejoin="round">
+        <path d="M43 15 L53 9 L66 30 L55 30
+                 L40 56 L29 50 L43 26"/>
+        <path d="M68 35 L79 35 L86 50 L62 50
+                 L62 61 L47 35"/>
+        <path d="M36 59 L24 59 L14 42 L7 55
+                 L22 81 L33 81 L27 71 L49 71 L49 59"/>
+      </g>
     </svg>
   </div>
   
+  <!-- 底部版权文字 -->
   <div class="footer-text">
     Shenzhen Baijiaying Technology Co., Ltd.<br>
     Compliant with Regulation (EU) 2023/1542 (EU Battery Regulation)
