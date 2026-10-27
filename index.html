@@ -2,24 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- 视口设置保留即可 -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BJY-18650-1200mAh-4.44Wh Battery</title>
 <style>
 body {
   margin: 0;
+  padding: 0;
   background: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  /* 删除了 flex 居中，因为对于超长图，垂直居中会导致滑动查看非常困难，且容易错位 */
 }
+
 img {
-  max-width: 95%;
-  max-height: 95vh;
+  width: 100%;       /* 图片宽度强制 100% 占满屏幕宽度 */
+  height: auto;      /* 高度自动，保持原图比例 */
+  display: block;    /* 消除图片底部的默认空白间隙 */
+  max-width: 100%;   /* 防止溢出 */
 }
 </style>
 </head>
 <body>
-<img src="./design/assets/Group1.svg" alt="BJY 18650 Battery Drawing" style="width:100%;max-width:700px;">
+<img src="./design/assets/Group1.svg" alt="BJY 18650 Battery Drawing">
 </body>
 </html>
