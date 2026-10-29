@@ -200,15 +200,15 @@
     <p data-i18n="header_subtitle">Lithium-ion Battery</p>
   </div>
 
-  <!-- 2. 制造商信息 -->
+  <!-- 2. 制造商信息 (已绑定多语言翻译) -->
   <div class="card">
     <div class="section-title" data-i18n="manu_title">Manufacturer</div>
-    <div style="font-weight: 600; font-size: 15px; margin-bottom: 5px;">Dongguan Baijiaying Electronic Technology Co., Ltd.</div>
-    <div class="text-muted" style="margin-bottom: 10px;">
+    <div style="font-weight: 600; font-size: 15px; margin-bottom: 5px;" data-i18n="manu_name">Dongguan Baijiaying Electronic Technology Co., Ltd.</div>
+    <div class="text-muted" style="margin-bottom: 10px;" data-i18n="manu_address">
       No. 4, Xin’an Jufu Road, Chang’an Town, Dongguan City, Guangdong, P.R. China
     </div>
     <div class="row"><div class="col-label" data-i18n="lbl_mobile">Mobile:</div><div class="col-value">+86 13652427727</div></div>
-    <div class="row"><div class="col-label" data-i18n="lbl_contact">Contact:</div><div class="col-value">Chen Ganghua</div></div>
+    <div class="row"><div class="col-label" data-i18n="lbl_contact">Contact:</div><div class="col-value">Cheng Ganghua</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_email">Email:</div><div class="col-value">cgh628628@126.com</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_website">Website:</div><div class="col-value">https://bjyldcgys.1688.com</div></div>
   </div>
@@ -289,7 +289,7 @@
 
   <!-- ================= 折叠卡片 ================= -->
   
-  <!-- 1. 绿色卡片 (长文本折叠) -->
+  <!-- 1. 绿色卡片 -->
   <details class="card card-green">
     <summary class="card-header">
       <span class="arrow-icon"></span>
@@ -384,9 +384,10 @@
   const translations = {
     // 英语 (默认)
     en: {
-      header_title: "BJY 18650",
-      header_subtitle: "Lithium-ion Battery",
-      manu_title: "Manufacturer",
+      header_title: "BJY 18650", header_subtitle: "Lithium-ion Battery",
+      manu_title: "Manufacturer", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "No. 4, Xin’an Jufu Road, Chang’an Town, Dongguan City, Guangdong, P.R. China", 
       lbl_mobile: "Mobile:", lbl_contact: "Contact:", lbl_email: "Email:", lbl_website: "Website:",
       batt_id_title: "Battery ID", lbl_product: "Product", val_product: "Lithium-ion Battery", lbl_model: "Model", lbl_batch: "Batch",
       manu_fac_title: "Manufacturing", lbl_place: "Place", val_place: "Dongguan, Guangdong, China", lbl_date: "Date", val_date: "November 2026",
@@ -410,10 +411,42 @@
       yellow_title: "Safety Warning", yellow_li1: "Keep away from high temperatures.", yellow_li2: "Do not use if submerged in water.", yellow_li3: "Do not open, crush, pierce, or burn.", yellow_li4: "Stop use if swollen or damaged.",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Compliant with Regulation (EU) 2023/1542 (EU Battery Regulation)"
     },
+    // 中文
+    zh: {
+      header_title: "佰佳盈18650", header_subtitle: "锂离子电池",
+      manu_title: "制造商", 
+      manu_name: "东莞市佰佳盈电子科技有限公司", 
+      manu_address: "中国广东省东莞市长安镇新安聚福路4号", 
+      lbl_mobile: "手机:", lbl_contact: "联系人:", val_contact: "程刚华", lbl_email: "邮箱:", lbl_website: "网站:",
+      batt_id_title: "电池 ID", lbl_product: "产品", val_product: "锂离子电池", lbl_model: "型号", lbl_batch: "批次",
+      manu_fac_title: "制造信息", lbl_place: "地点", val_place: "中国广东省东莞市", lbl_date: "日期", val_date: "2026年11月",
+      spec_title: "规格参数", lbl_weight: "重量", lbl_size: "尺寸 (mm) 长*宽", lbl_voltage: "电压", lbl_capacity: "容量", lbl_chem: "化学成分", val_chem: "锰酸锂",
+      hazard_title: "有害物质", tbl_test_items: "测试项目", tbl_regulatory: "法规要求 (%)", tbl_results: "结果<br>(%)", tbl_mdl: "检出限<br>(%)", tbl_max_limit: "最大允许<br>限值", tbl_label_limit: "标签<br>限值",
+      tbl_lead: "铅 (Pb)", tbl_cad: "镉 (Cd)", tbl_mer: "汞 (Hg)",
+      ext_title: "灭火剂", ext_water: "水", ext_sand: "干砂",
+      chem_title: "化学成分 (关键原材料>0.1%)", chem_name: "化学品名称", chem_conc: "浓度或<br>浓度范围 (%)", chem_li: "锂", chem_fe: "铁", chem_gra: "石墨", chem_al: "铝", chem_cu: "铜",
+      green_title: "废弃锂离子电池的预防与管理信息",
+      green_a: "a) 废物预防", green_a_desc: "为了帮助防止电池浪费并延长电池使用寿命：",
+      green_a_li1: "仅按照本手册所述充电和使用电池。", green_a_li2: "将产品存放在阴凉、干燥的地方，远离阳光直射、过热、潮湿和腐蚀性环境。", green_a_li3: "避免跌落、挤压、刺穿、拆卸、改装或将电池暴露在过度的机械冲击下。", green_a_li4: "不要将电池暴露在火中或超过指定操作或存储限制的温度下。", green_a_li5: "正确的使用、充电和存放有助于最大化电池寿命并减少浪费。",
+      green_b: "b) 废弃电池分类收集", green_b_desc: "请勿将锂离子电池与生活垃圾一起丢弃。",
+      green_b_li1: "在电池使用寿命结束时，请根据当地法规，通过指定的电池收集点或授权的回收设施进行处置。", green_b_li2: "在可行的情况下，使用零售商、市政或生产商的废弃电池回收计划。",
+      green_c: "c) 收集、回收、再利用、翻新和处理", green_c_desc: "废弃锂离子电池应分类收集，以便进行再利用准备、适当的翻新、回收和材料回收。",
+      green_c_li1: "分类收集有助于节约有价值的原材料并减少环境影响。", green_c_li2: "可通过授权的收集点和回收设施获取收集和处理服务。",
+      green_d: "d) 处理废弃电池的安全说明", green_d_desc: "小心处理废弃电池，以防止短路、火灾或泄漏。",
+      green_d_li1: "请勿挤压、刺穿、拆卸、焚烧废弃电池或将其暴露在过热环境中。", green_d_li2: "如果电池损坏、膨胀、泄漏或过热，请立即停止使用，并通过授权的收集设施进行处置。", green_d_li3: "在可行的情况下，在处置前用绝缘胶带覆盖裸露的电池端子。", green_d_li4: "将废弃电池存放在阴凉、干燥的地方，远离金属物体和可燃材料，直到它们被回收。",
+      green_e: "e) 标签和符号的含义", green_e_li1: "<strong>打叉的带轮垃圾桶符号：</strong> 表示该电池不得与生活垃圾一起丢弃，必须分类收集以进行回收。", green_e_li2: "<strong>CE 标志：</strong> 表示产品符合适用的欧盟法规和合格评定要求。",
+      green_f: "f) 有害物质对环境和健康的影响", green_f_desc: "如果处理或处置不当，锂离子电池包含的物质可能会对人类健康和环境造成风险。",
+      green_f_li1: "切勿将电池丢入火中、生活垃圾或自然环境中。", green_f_li2: "正确的收集和回收有助于防止环境污染，降低安全风险，并为未来使用回收有价值的材料。",
+      yellow_title: "安全警告", yellow_li1: "远离高温。", yellow_li2: "如果浸入水中，请勿使用。", yellow_li3: "请勿打开、挤压、刺穿或燃烧。", yellow_li4: "如果电池膨胀或损坏，请停止使用。",
+      footer_text: "东莞市佰佳盈电子科技有限公司<br>符合法规 (EU) 2023/1542 (欧盟电池法规)"
+    },
     // 德语
     de: {
       header_title: "BJY 18650", header_subtitle: "Lithium-Ionen-Akku",
-      manu_title: "Hersteller", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-Mail:", lbl_website: "Webseite:",
+      manu_title: "Hersteller", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road Nr. 4, Chang’an Stadt, Dongguan Stadt, Provinz Guangdong, VR China", 
+      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-Mail:", lbl_website: "Webseite:",
       batt_id_title: "Akku-ID", lbl_product: "Produkt", val_product: "Lithium-Ionen-Akku", lbl_model: "Modell", lbl_batch: "Charge",
       manu_fac_title: "Herstellung", lbl_place: "Ort", val_place: "Dongguan, Guangdong, China", lbl_date: "Datum", val_date: "November 2026",
       spec_title: "Spezifikationen", lbl_weight: "Gewicht", lbl_size: "Größe (mm) L*B", lbl_voltage: "Spannung", lbl_capacity: "Kapazität", lbl_chem: "Chemie", val_chem: "Lithiummanganat",
@@ -439,7 +472,10 @@
     // 法语
     fr: {
       header_title: "BJY 18650", header_subtitle: "Batterie Lithium-ion",
-      manu_title: "Fabricant", lbl_mobile: "Mobile :", lbl_contact: "Contact :", lbl_email: "E-mail :", lbl_website: "Site Web :",
+      manu_title: "Fabricant", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "No. 4, Xin’an Jufu Road, ville de Chang’an, ville de Dongguan, province du Guangdong, R.P. de Chine", 
+      lbl_mobile: "Mobile :", lbl_contact: "Contact :", lbl_email: "E-mail :", lbl_website: "Site Web :",
       batt_id_title: "ID de la batterie", lbl_product: "Produit", val_product: "Batterie Lithium-ion", lbl_model: "Modèle", lbl_batch: "Lot",
       manu_fac_title: "Fabrication", lbl_place: "Lieu", val_place: "Dongguan, Guangdong, Chine", lbl_date: "Date", val_date: "Novembre 2026",
       spec_title: "Spécifications", lbl_weight: "Poids", lbl_size: "Taille (mm) L*L", lbl_voltage: "Tension", lbl_capacity: "Capacité", lbl_chem: "Chimie", val_chem: "Manganate de lithium",
@@ -465,7 +501,10 @@
     // 西班牙语
     es: {
       header_title: "BJY 18650", header_subtitle: "Batería de iones de litio",
-      manu_title: "Fabricante", lbl_mobile: "Móvil:", lbl_contact: "Contacto:", lbl_email: "Correo:", lbl_website: "Sitio web:",
+      manu_title: "Fabricante", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "N.º 4, Xin’an Jufu Road, Chang’an Town, Dongguan City, Guangdong, R.P. China", 
+      lbl_mobile: "Móvil:", lbl_contact: "Contacto:", lbl_email: "Correo:", lbl_website: "Sitio web:",
       batt_id_title: "ID de la batería", lbl_product: "Producto", val_product: "Batería de iones de litio", lbl_model: "Modelo", lbl_batch: "Lote",
       manu_fac_title: "Fabricación", lbl_place: "Lugar", val_place: "Dongguan, Guangdong, China", lbl_date: "Fecha", val_date: "Noviembre 2026",
       spec_title: "Especificaciones", lbl_weight: "Peso", lbl_size: "Tamaño (mm) L*An", lbl_voltage: "Voltaje", lbl_capacity: "Capacidad", lbl_chem: "Química", val_chem: "Manganato de litio",
@@ -491,7 +530,10 @@
     // 意大利语
     it: {
       header_title: "BJY 18650", header_subtitle: "Batteria agli ioni di litio",
-      manu_title: "Produttore", lbl_mobile: "Cellulare:", lbl_contact: "Contatto:", lbl_email: "Email:", lbl_website: "Sito web:",
+      manu_title: "Produttore", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "N. 4, Xin’an Jufu Road, Chang’an Town, Dongguan City, Guangdong, R.P. Cina", 
+      lbl_mobile: "Cellulare:", lbl_contact: "Contatto:", lbl_email: "Email:", lbl_website: "Sito web:",
       batt_id_title: "ID batteria", lbl_product: "Prodotto", val_product: "Batteria agli ioni di litio", lbl_model: "Modello", lbl_batch: "Lotto",
       manu_fac_title: "Produzione", lbl_place: "Luogo", val_place: "Dongguan, Guangdong, Cina", lbl_date: "Data", val_date: "Novembre 2026",
       spec_title: "Specifiche", lbl_weight: "Peso", lbl_size: "Dimensioni (mm) L*L", lbl_voltage: "Tensione", lbl_capacity: "Capacità", lbl_chem: "Chimica", val_chem: "Manganato di litio",
@@ -517,7 +559,10 @@
     // 荷兰语
     nl: {
       header_title: "BJY 18650", header_subtitle: "Lithium-ionbatterij",
-      manu_title: "Fabrikant", lbl_mobile: "Mobiel:", lbl_contact: "Contactpersoon:", lbl_email: "E-mail:", lbl_website: "Website:",
+      manu_title: "Fabrikant", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, Guangdong, V.R. China", 
+      lbl_mobile: "Mobiel:", lbl_contact: "Contactpersoon:", lbl_email: "E-mail:", lbl_website: "Website:",
       batt_id_title: "Batterij-ID", lbl_product: "Product", val_product: "Lithium-ionbatterij", lbl_model: "Model", lbl_batch: "Batch",
       manu_fac_title: "Productie", lbl_place: "Locatie", val_place: "Dongguan, Guangdong, China", lbl_date: "Datum", val_date: "November 2026",
       spec_title: "Specificaties", lbl_weight: "Gewicht", lbl_size: "Afmeting (mm) L*B", lbl_voltage: "Spanning", lbl_capacity: "Capaciteit", lbl_chem: "Chemie", val_chem: "Lithiummanganaat",
@@ -543,7 +588,10 @@
     // 葡萄牙语
     pt: {
       header_title: "BJY 18650", header_subtitle: "Bateria de íons de lítio",
-      manu_title: "Fabricante", lbl_mobile: "Celular:", lbl_contact: "Contato:", lbl_email: "E-mail:", lbl_website: "Site:",
+      manu_title: "Fabricante", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "N.º 4, Xin’an Jufu Road, Chang’an Town, Dongguan City, Guangdong, R.P. da China", 
+      lbl_mobile: "Celular:", lbl_contact: "Contato:", lbl_email: "E-mail:", lbl_website: "Site:",
       batt_id_title: "ID da Bateria", lbl_product: "Produto", val_product: "Bateria de íons de lítio", lbl_model: "Modelo", lbl_batch: "Lote",
       manu_fac_title: "Fabricação", lbl_place: "Local", val_place: "Dongguan, Guangdong, China", lbl_date: "Data", val_date: "Novembro de 2026",
       spec_title: "Especificações", lbl_weight: "Peso", lbl_size: "Tamanho (mm) C*L", lbl_voltage: "Voltagem", lbl_capacity: "Capacidade", lbl_chem: "Química", val_chem: "Manganato de lítio",
@@ -569,7 +617,10 @@
     // 波兰语
     pl: {
       header_title: "BJY 18650", header_subtitle: "Akumulator litowo-jonowy",
-      manu_title: "Producent", lbl_mobile: "Telefon:", lbl_contact: "Osoba kontaktowa:", lbl_email: "E-mail:", lbl_website: "Strona internetowa:",
+      manu_title: "Producent", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, prowincja Guangdong, ChRL", 
+      lbl_mobile: "Telefon:", lbl_contact: "Osoba kontaktowa:", lbl_email: "E-mail:", lbl_website: "Strona internetowa:",
       batt_id_title: "Identyfikator baterii", lbl_product: "Produkt", val_product: "Akumulator litowo-jonowy", lbl_model: "Model", lbl_batch: "Partia",
       manu_fac_title: "Produkcja", lbl_place: "Miejsce", val_place: "Dongguan, Guangdong, Chiny", lbl_date: "Data", val_date: "Listopad 2026",
       spec_title: "Specyfikacje", lbl_weight: "Waga", lbl_size: "Rozmiar (mm) Dł*Szer", lbl_voltage: "Napięcie", lbl_capacity: "Pojemność", lbl_chem: "Chemia", val_chem: "Manganian litu",
@@ -595,7 +646,10 @@
     // 瑞典语
     sv: {
       header_title: "BJY 18650", header_subtitle: "Litiumjonbatteri",
-      manu_title: "Tillverkare", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Webbplats:",
+      manu_title: "Tillverkare", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, Guangdong-provinsen, Kina", 
+      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Webbplats:",
       batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Litiumjonbatteri", lbl_model: "Modell", lbl_batch: "Batch",
       manu_fac_title: "Tillverkning", lbl_place: "Plats", val_place: "Dongguan, Guangdong, Kina", lbl_date: "Datum", val_date: "November 2026",
       spec_title: "Specifikationer", lbl_weight: "Vikt", lbl_size: "Storlek (mm) L*B", lbl_voltage: "Spänning", lbl_capacity: "Kapacitet", lbl_chem: "Kemi", val_chem: "Litiummanganat",
@@ -621,7 +675,10 @@
     // 丹麦语
     da: {
       header_title: "BJY 18650", header_subtitle: "Lithium-ion batteri",
-      manu_title: "Producent", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-mail:", lbl_website: "Hjemmeside:",
+      manu_title: "Producent", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, Guangdong-provinsen, Kina", 
+      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-mail:", lbl_website: "Hjemmeside:",
       batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Lithium-ion batteri", lbl_model: "Model", lbl_batch: "Batch",
       manu_fac_title: "Fremstilling", lbl_place: "Sted", val_place: "Dongguan, Guangdong, Kina", lbl_date: "Dato", val_date: "November 2026",
       spec_title: "Specifikationer", lbl_weight: "Vægt", lbl_size: "Størrelse (mm) L*B", lbl_voltage: "Spænding", lbl_capacity: "Kapacitet", lbl_chem: "Kemi", val_chem: "Lithiummanganat",
@@ -647,7 +704,10 @@
     // 芬兰语
     fi: {
       header_title: "BJY 18650", header_subtitle: "Litiumioniakku",
-      manu_title: "Valmistaja", lbl_mobile: "Matkapuhelin:", lbl_contact: "Yhteyshenkilö:", lbl_email: "Sähköposti:", lbl_website: "Verkkosivusto:",
+      manu_title: "Valmistaja", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, Guangdongin maakunta, Kiina", 
+      lbl_mobile: "Matkapuhelin:", lbl_contact: "Yhteyshenkilö:", lbl_email: "Sähköposti:", lbl_website: "Verkkosivusto:",
       batt_id_title: "Akun tunnus", lbl_product: "Tuote", val_product: "Litiumioniakku", lbl_model: "Malli", lbl_batch: "Erä",
       manu_fac_title: "Valmistus", lbl_place: "Paikka", val_place: "Dongguan, Guangdong, Kiina", lbl_date: "Päivämäärä", val_date: "Marraskuu 2026",
       spec_title: "Tekniset tiedot", lbl_weight: "Paino", lbl_size: "Koko (mm) P*L", lbl_voltage: "Jännite", lbl_capacity: "Kapasiteetti", lbl_chem: "Kemia", val_chem: "Litiummanganaatti",
@@ -673,7 +733,10 @@
     // 挪威语
     no: {
       header_title: "BJY 18650", header_subtitle: "Litium-ion-batteri",
-      manu_title: "Produsent", lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Nettsted:",
+      manu_title: "Produsent", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, Guangdong-provinsen, Kina", 
+      lbl_mobile: "Mobil:", lbl_contact: "Kontakt:", lbl_email: "E-post:", lbl_website: "Nettsted:",
       batt_id_title: "Batteri-ID", lbl_product: "Produkt", val_product: "Litium-ion-batteri", lbl_model: "Modell", lbl_batch: "Batch",
       manu_fac_title: "Produksjon", lbl_place: "Sted", val_place: "Dongguan, Guangdong, Kina", lbl_date: "Dato", val_date: "November 2026",
       spec_title: "Spesifikasjoner", lbl_weight: "Vekt", lbl_size: "Størrelse (mm) L*B", lbl_voltage: "Spenning", lbl_capacity: "Kapasitet", lbl_chem: "Kjemi", val_chem: "Litiummanganat",
@@ -699,7 +762,10 @@
     // 克罗地亚语
     hr: {
       header_title: "BJY 18650", header_subtitle: "Litij-ionska baterija",
-      manu_title: "Proizvođač", lbl_mobile: "Mobitel:", lbl_contact: "Kontakt:", lbl_email: "E-pošta:", lbl_website: "Web stranica:",
+      manu_title: "Proizvođač", 
+      manu_name: "Dongguan Baijiaying Electronic Technology Co., Ltd.", 
+      manu_address: "Xin’an Jufu Road 4, Chang’an Town, Dongguan City, pokrajina Guangdong, NR Kina", 
+      lbl_mobile: "Mobitel:", lbl_contact: "Kontakt:", lbl_email: "E-pošta:", lbl_website: "Web stranica:",
       batt_id_title: "ID baterije", lbl_product: "Proizvod", val_product: "Litij-ionska baterija", lbl_model: "Model", lbl_batch: "Serija",
       manu_fac_title: "Proizvodnja", lbl_place: "Mjesto", val_place: "Dongguan, Guangdong, Kina", lbl_date: "Datum", val_date: "Studeni 2026",
       spec_title: "Specifikacije", lbl_weight: "Težina", lbl_size: "Veličina (mm) D*Š", lbl_voltage: "Napon", lbl_capacity: "Kapacitet", lbl_chem: "Kemija", val_chem: "Litijev manganat",
@@ -721,34 +787,6 @@
       green_f_li1: "Nikada ne odlažite baterije u vatru, kućni otpad ili prirodni okoliš.", green_f_li2: "Pravilno prikupljanje i recikliranje pomažu u sprječavanju onečišćenja okoliša i omogućuju oporabu vrijednih materijala.",
       yellow_title: "Sigurnosno upozorenje", yellow_li1: "Držite podalje od visokih temperatura.", yellow_li2: "Ne koristite ako je uronjena u vodu.", yellow_li3: "Ne otvarajte, ne drobite, ne bušite i ne spaljujte.", yellow_li4: "Prekinite s uporabom ako je baterija natečena ili oštećena.",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>U skladu s Uredbom (EU) 2023/1542 (Uredba EU o baterijama)"
-    },
-    // 中文
-    zh: {
-      header_title: "BJY 18650",
-      header_subtitle: "锂离子电池",
-      manu_title: "制造商",
-      lbl_mobile: "手机:", lbl_contact: "联系人:", lbl_email: "邮箱:", lbl_website: "网站:",
-      batt_id_title: "电池 ID", lbl_product: "产品", val_product: "锂离子电池", lbl_model: "型号", lbl_batch: "批次",
-      manu_fac_title: "制造信息", lbl_place: "地点", val_place: "中国广东省东莞市", lbl_date: "日期", val_date: "2026年11月",
-      spec_title: "规格参数", lbl_weight: "重量", lbl_size: "尺寸 (mm) 长*宽", lbl_voltage: "电压", lbl_capacity: "容量", lbl_chem: "化学成分", val_chem: "锰酸锂",
-      hazard_title: "有害物质", tbl_test_items: "测试项目", tbl_regulatory: "法规要求 (%)", tbl_results: "结果<br>(%)", tbl_mdl: "检出限<br>(%)", tbl_max_limit: "最大允许<br>限值", tbl_label_limit: "标签<br>限值",
-      tbl_lead: "铅 (Pb)", tbl_cad: "镉 (Cd)", tbl_mer: "汞 (Hg)",
-      ext_title: "灭火剂", ext_water: "水", ext_sand: "干沙",
-      chem_title: "化学成分 (关键原材料>0.1%)", chem_name: "化学品名称", chem_conc: "浓度或<br>浓度范围 (%)", chem_li: "锂", chem_fe: "铁", chem_gra: "石墨", chem_al: "铝", chem_cu: "铜",
-      green_title: "废弃锂离子电池的预防与管理信息",
-      green_a: "a) 废物预防", green_a_desc: "为了帮助防止电池浪费并延长电池使用寿命：",
-      green_a_li1: "仅按照本手册所述充电和使用电池。", green_a_li2: "将产品存放在阴凉、干燥的地方，远离阳光直射、过热、潮湿和腐蚀性环境。", green_a_li3: "避免跌落、挤压、刺穿、拆卸、改装或将电池暴露在过度的机械冲击下。", green_a_li4: "不要将电池暴露在火中或超过指定操作或存储限制的温度下。", green_a_li5: "正确的使用、充电和存放有助于最大化电池寿命并减少浪费。",
-      green_b: "b) 废弃电池分类收集", green_b_desc: "请勿将锂离子电池与生活垃圾一起丢弃。",
-      green_b_li1: "在电池使用寿命结束时，请根据当地法规，通过指定的电池收集点或授权的回收设施进行处置。", green_b_li2: "在可行的情况下，使用零售商、市政或生产商的废弃电池回收计划。",
-      green_c: "c) 收集、回收、再利用、翻新和处理", green_c_desc: "废弃锂离子电池应分类收集，以便进行再利用准备、适当的翻新、回收和材料回收。",
-      green_c_li1: "分类收集有助于节约有价值的原材料并减少环境影响。", green_c_li2: "可通过授权的收集点和回收设施获取收集和处理服务。",
-      green_d: "d) 处理废弃电池的安全说明", green_d_desc: "小心处理废弃电池，以防止短路、火灾或泄漏。",
-      green_d_li1: "请勿挤压、刺穿、拆卸、焚烧废弃电池或将其暴露在过热环境中。", green_d_li2: "如果电池损坏、膨胀、泄漏或过热，请立即停止使用，并通过授权的收集设施进行处置。", green_d_li3: "在可行的情况下，在处置前用绝缘胶带覆盖裸露的电池端子。", green_d_li4: "将废弃电池存放在阴凉、干燥的地方，远离金属物体和可燃材料，直到它们被回收。",
-      green_e: "e) 标签和符号的含义", green_e_li1: "<strong>打叉的带轮垃圾桶符号：</strong> 表示该电池不得与生活垃圾一起丢弃，必须分类收集以进行回收。", green_e_li2: "<strong>CE 标志：</strong> 表示产品符合适用的欧盟法规和合格评定要求。",
-      green_f: "f) 有害物质对环境和健康的影响", green_f_desc: "如果处理或处置不当，锂离子电池包含的物质可能会对人类健康和环境造成风险。",
-      green_f_li1: "切勿将电池丢入火中、生活垃圾或自然环境中。", green_f_li2: "正确的收集和回收有助于防止环境污染，降低安全风险，并为未来使用回收有价值的材料。",
-      yellow_title: "安全警告", yellow_li1: "远离高温。", yellow_li2: "如果浸入水中，请勿使用。", yellow_li3: "请勿打开、挤压、刺穿或燃烧。", yellow_li4: "如果电池膨胀或损坏，请停止使用。",
-      footer_text: "东莞市佰佳盈电子科技有限公司<br>符合法规 (EU) 2023/1542 (欧盟电池法规)"
     }
   };
 
