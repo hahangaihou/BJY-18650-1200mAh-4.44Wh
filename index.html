@@ -45,6 +45,10 @@
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* 国旗和文字的距离 */
   }
   .lang-btn:hover {
     background-color: #f0f0f0;
@@ -53,6 +57,14 @@
     background-color: #7b8df4;
     color: #ffffff;
     border-color: #7b8df4;
+  }
+  /* 国旗图标统一样式 */
+  .lang-btn img {
+    width: 16px;
+    height: 12px;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow: 0 0 1px rgba(0,0,0,0.2); /* 防止白色背景国旗融进按钮背景 */
   }
   /* ================= 通用卡片样式 ================= */
   .card {
@@ -165,28 +177,30 @@
 <body>
 <div class="container">
   
-  <!-- ================= 语言切换栏 ================= -->
+  <!-- ================= 语言切换栏 (已加入国旗) ================= -->
   <div class="lang-bar" id="langBar">
-    <button class="lang-btn active" data-lang="en">GB EN</button>
-    <button class="lang-btn" data-lang="de">DE DE</button>
-    <button class="lang-btn" data-lang="fr">FR FR</button>
-    <button class="lang-btn" data-lang="es">ES ES</button>
-    <button class="lang-btn" data-lang="it">IT IT</button>
-    <button class="lang-btn" data-lang="nl">NL NL</button>
-    <button class="lang-btn" data-lang="pt">PT PT</button>
-    <button class="lang-btn" data-lang="pl">PL PL</button>
-    <button class="lang-btn" data-lang="sv">SE SV</button>
-    <button class="lang-btn" data-lang="da">DK DA</button>
-    <button class="lang-btn" data-lang="fi">FI FI</button>
-    <button class="lang-btn" data-lang="no">NO NO</button>
-    <button class="lang-btn" data-lang="hr">HR HR</button>
-    <button class="lang-btn" data-lang="zh">CN 中文</button>
+    <button class="lang-btn active" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="EN"> EN</button>
+    <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/de.svg" alt="DE"> DE</button>
+    <button class="lang-btn" data-lang="fr"><img src="https://flagcdn.com/fr.svg" alt="FR"> FR</button>
+    <button class="lang-btn" data-lang="es"><img src="https://flagcdn.com/es.svg" alt="ES"> ES</button>
+    <button class="lang-btn" data-lang="it"><img src="https://flagcdn.com/it.svg" alt="IT"> IT</button>
+    <button class="lang-btn" data-lang="nl"><img src="https://flagcdn.com/nl.svg" alt="NL"> NL</button>
+    <button class="lang-btn" data-lang="pt"><img src="https://flagcdn.com/pt.svg" alt="PT"> PT</button>
+    <button class="lang-btn" data-lang="pl"><img src="https://flagcdn.com/pl.svg" alt="PL"> PL</button>
+    <button class="lang-btn" data-lang="sv"><img src="https://flagcdn.com/se.svg" alt="SV"> SV</button>
+    <button class="lang-btn" data-lang="da"><img src="https://flagcdn.com/dk.svg" alt="DA"> DA</button>
+    <button class="lang-btn" data-lang="fi"><img src="https://flagcdn.com/fi.svg" alt="FI"> FI</button>
+    <button class="lang-btn" data-lang="no"><img src="https://flagcdn.com/no.svg" alt="NO"> NO</button>
+    <button class="lang-btn" data-lang="hr"><img src="https://flagcdn.com/hr.svg" alt="HR"> HR</button>
+    <button class="lang-btn" data-lang="zh"><img src="https://flagcdn.com/cn.svg" alt="CN"> 中文</button>
   </div>
+  
   <!-- 1. 顶部标题 -->
   <div class="header-banner">
     <h1 data-i18n="header_title">BJY 18650</h1>
     <p data-i18n="header_subtitle">Lithium-ion Battery</p>
   </div>
+  
   <!-- 2. 制造商信息 (已绑定多语言翻译) -->
   <div class="card">
     <div class="section-title" data-i18n="manu_title">Manufacturer</div>
@@ -196,12 +210,13 @@
     </div>
     <div class="row"><div class="col-label" data-i18n="lbl_mobile">Mobile:</div><div class="col-value">+86 13652427727</div></div>
     
-    <!-- 🌟 核心修改点：加上了 data-i18n="val_contact" -->
+    <!-- 核心修改点：加上了 data-i18n="val_contact" -->
     <div class="row"><div class="col-label" data-i18n="lbl_contact">Contact:</div><div class="col-value" data-i18n="val_contact">Cheng Ganghua</div></div>
     
     <div class="row"><div class="col-label" data-i18n="lbl_email">Email:</div><div class="col-value">cgh628628@126.com</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_website">Website:</div><div class="col-value">https://bjyldcgys.1688.com</div></div>
   </div>
+  
   <!-- 3. 电池 ID 和制造信息 -->
   <div class="card">
     <div class="section-title" data-i18n="batt_id_title">Battery ID</div>
@@ -215,6 +230,7 @@
     <div class="row"><div class="col-label" data-i18n="lbl_place">Place</div><div class="col-value" data-i18n="val_place">Dongguan, Guangdong, China</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_date">Date</div><div class="col-value" data-i18n="val_date">November 2026</div></div>
   </div>
+  
   <!-- 4. 规格参数 -->
   <div class="card">
     <div class="section-title" data-i18n="spec_title">Specifications</div>
@@ -224,6 +240,7 @@
     <div class="row"><div class="col-label" data-i18n="lbl_capacity">Capacity</div><div class="col-value">1200mAh 4.44Wh</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_chem">Chemistry</div><div class="col-value" data-i18n="val_chem">Lithium Manganate</div></div>
   </div>
+  
   <!-- 5. 有害物质表格 -->
   <div class="card">
     <div class="section-title" data-i18n="hazard_title">Hazardous Substances</div>
@@ -245,6 +262,7 @@
       </table>
     </div>
   </div>
+  
   <!-- 6. 灭火剂 -->
   <div class="card">
     <div class="section-title" data-i18n="ext_title">Extinguishing Agents</div>
@@ -253,6 +271,7 @@
       <div class="agent-pill" data-i18n="ext_sand">Dry Sand</div>
     </div>
   </div>
+  
   <!-- 7. 化学成分表格 -->
   <div class="card">
     <div class="section-title" style="line-height: 1.3; margin-bottom: 15px;" data-i18n="chem_title">Chemical Composition (Critical Raw Materials>0.1%)</div>
@@ -271,6 +290,7 @@
       </table>
     </div>
   </div>
+  
   <!-- ================= 折叠卡片 ================= -->
   
   <!-- 1. 绿色卡片 -->
@@ -322,6 +342,7 @@
       </ul>
     </div>
   </details>
+  
   <!-- 2. 黄色卡片 -->
   <details class="card card-yellow">
     <summary class="card-header">
@@ -338,6 +359,7 @@
       </ol>
     </div>
   </details>
+  
   <!-- 底部合规标志 -->
   <style>
   .bottom-icons{display:flex;justify-content:center;align-items:center;gap:42px;background:#fff;padding:20px;border-radius:12px;margin-top:15px}
