@@ -172,12 +172,22 @@
   .card-yellow ol { margin: 0; padding-left: 15px; color: #7a5f11; }
   .card-yellow li { margin-bottom: 4px; }
   .warning-icon { margin-right: 6px; }
+  
+  /* ================= 符合性声明卡片专属样式 ================= */
+  .card-purple { background-color: #f6f3fc; border-radius: 12px; }
+  .view-btn {
+    display: inline-flex; align-items: center; background-color: #e4e5ff; color: #5b4fc8;
+    border: none; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    text-decoration: none; cursor: pointer; transition: background 0.2s;
+  }
+  .view-btn:hover { background-color: #d5d7ff; }
+  .view-btn svg { width: 14px; height: 14px; margin-right: 6px; fill: currentColor; }
 </style>
 </head>
 <body>
 <div class="container">
   
-  <!-- ================= 语言切换栏 (已加入国旗) ================= -->
+  <!-- ================= 语言切换栏 ================= -->
   <div class="lang-bar" id="langBar">
     <button class="lang-btn active" data-lang="en"><img src="https://flagcdn.com/gb.svg" alt="EN"> EN</button>
     <button class="lang-btn" data-lang="de"><img src="https://flagcdn.com/de.svg" alt="DE"> DE</button>
@@ -201,7 +211,7 @@
     <p data-i18n="header_subtitle">Lithium-ion Battery</p>
   </div>
   
-  <!-- 2. 制造商信息 (已绑定多语言翻译) -->
+  <!-- 2. 制造商信息 -->
   <div class="card">
     <div class="section-title" data-i18n="manu_title">Manufacturer</div>
     <div style="font-weight: 600; font-size: 15px; margin-bottom: 5px;" data-i18n="manu_name">Dongguan Baijiaying Electronic Technology Co., Ltd.</div>
@@ -209,10 +219,7 @@
       No. 4, Xin’an Jufu Road, Chang’an Town, Dongguan City, Guangdong, P.R. China
     </div>
     <div class="row"><div class="col-label" data-i18n="lbl_mobile">Mobile:</div><div class="col-value">+86 13652427727</div></div>
-    
-    <!-- 核心修改点：加上了 data-i18n="val_contact" -->
     <div class="row"><div class="col-label" data-i18n="lbl_contact">Contact:</div><div class="col-value" data-i18n="val_contact">Cheng Ganghua</div></div>
-    
     <div class="row"><div class="col-label" data-i18n="lbl_email">Email:</div><div class="col-value">cgh628628@126.com</div></div>
     <div class="row"><div class="col-label" data-i18n="lbl_website">Website:</div><div class="col-value">https://bjyldcgys.1688.com</div></div>
   </div>
@@ -359,6 +366,21 @@
       </ol>
     </div>
   </details>
+
+  <!-- 3. 符合性声明卡片 (新增) -->
+  <div class="card card-purple">
+    <div class="section-title" data-i18n="doc_title" style="font-size: 15px; color: #4a4458; margin-bottom: 8px;">Declaration of Conformity</div>
+    <p class="text-muted" data-i18n="doc_desc" style="margin-bottom: 15px; line-height: 1.5; color: #666; font-size: 13px;">
+      This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.
+    </p>
+    <!-- ⚠️ 请把 href="#" 里面的 # 换成你的真实文件链接 -->
+    <a href="design/assets/Mini fan EU declaration of conformity DoC.pdf" target="_blank" class="view-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/>
+      </svg>
+      <span data-i18n="doc_btn">View</span>
+    </a>
+  </div>
   
   <!-- 底部合规标志 -->
   <style>
@@ -410,6 +432,9 @@
       green_f: "f) Environmental and Health Impact of Hazardous Substances", green_f_desc: "Lithium-ion batteries contain substances that may present risks to human health and the environment if improperly handled or disposed of.",
       green_f_li1: "Never dispose of batteries in fire, household waste or the natural environment.", green_f_li2: "Proper collection and recycling help prevent environmental pollution, reduce safety risks and enable the recovery of valuable materials for future use.",
       yellow_title: "Safety Warning", yellow_li1: "Keep away from high temperatures.", yellow_li2: "Do not use if submerged in water.", yellow_li3: "Do not open, crush, pierce, or burn.", yellow_li4: "Stop use if swollen or damaged.",
+      doc_title: "Declaration of Conformity",
+      doc_desc: "This product complies with the requirements of the applicable European Union legislation. The Declaration of Conformity (DoC) can be viewed below; the PDF is available on the declaration page.",
+      doc_btn: "View",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Compliant with Regulation (EU) 2023/1542 (EU Battery Regulation)"
     },
     // 中文
@@ -439,6 +464,9 @@
       green_f: "f) 有害物质对环境和健康的影响", green_f_desc: "如果处理或处置不当，锂离子电池包含的物质可能会对人类健康和环境造成风险。",
       green_f_li1: "切勿将电池丢入火中、生活垃圾或自然环境中。", green_f_li2: "正确的收集和回收有助于防止环境污染，降低安全风险，并为未来使用回收有价值的材料。",
       yellow_title: "安全警告", yellow_li1: "远离高温。", yellow_li2: "如果浸入水中，请勿使用。", yellow_li3: "请勿打开、挤压、刺穿或燃烧。", yellow_li4: "如果电池膨胀或损坏，请停止使用。",
+      doc_title: "符合性声明",
+      doc_desc: "本产品符合适用的欧盟法规要求。符合性声明 (DoC) 可以在下方查看；PDF 可在声明页面获取。",
+      doc_btn: "查看",
       footer_text: "东莞市佰佳盈电子科技有限公司<br>符合法规 (EU) 2023/1542 (欧盟电池法规)"
     },
     // 德语
@@ -468,6 +496,9 @@
       green_f: "f) Umwelt- und Gesundheitsauswirkungen von Gefahrstoffen", green_f_desc: "Lithium-Ionen-Akkus können bei unsachgemäßer Handhabung Risiken für Mensch und Umwelt darstellen.",
       green_f_li1: "Entsorgen Sie Batterien niemals in Feuer, Hausmüll oder der Natur.", green_f_li2: "Ordnungsgemäße Sammlung und Recycling verhindern Umweltverschmutzung und ermöglichen die Rückgewinnung wertvoller Materialien.",
       yellow_title: "Sicherheitswarnung", yellow_li1: "Von hohen Temperaturen fernhalten.", yellow_li2: "Nicht verwenden, wenn in Wasser eingetaucht.", yellow_li3: "Nicht öffnen, quetschen, durchstechen oder verbrennen.", yellow_li4: "Verwendung bei Aufblähung oder Beschädigung einstellen.",
+      doc_title: "Konformitätserklärung",
+      doc_desc: "Dieses Produkt entspricht den Anforderungen der geltenden EU-Rechtsvorschriften. Die Konformitätserklärung (DoC) kann unten eingesehen werden; die PDF-Datei ist auf der Erklärungsseite verfügbar.",
+      doc_btn: "Ansehen",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Entspricht der Verordnung (EU) 2023/1542 (EU-Batterieverordnung)"
     },
     // 法语
@@ -497,6 +528,9 @@
       green_f: "f) Impact environnemental et sanitaire des substances dangereuses", green_f_desc: "Les batteries lithium-ion contiennent des substances qui peuvent présenter des risques si elles sont mal manipulées.",
       green_f_li1: "Ne jetez jamais les batteries au feu, dans les ordures ménagères ou dans la nature.", green_f_li2: "Une collecte et un recyclage appropriés aident à prévenir la pollution et permettent de récupérer des matériaux précieux.",
       yellow_title: "Avertissement de sécurité", yellow_li1: "Tenir à l'écart des températures élevées.", yellow_li2: "Ne pas utiliser si immergé dans l'eau.", yellow_li3: "Ne pas ouvrir, écraser, percer ou brûler.", yellow_li4: "Cesser l'utilisation si la batterie est gonflée ou endommagée.",
+      doc_title: "Déclaration de conformité",
+      doc_desc: "Ce produit est conforme aux exigences de la législation applicable de l'Union européenne. La Déclaration de conformité (DoC) peut être consultée ci-dessous ; le PDF est disponible sur la page de déclaration.",
+      doc_btn: "Voir",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Conforme au règlement (UE) 2023/1542 (Règlement sur les batteries de l'UE)"
     },
     // 西班牙语
@@ -526,6 +560,9 @@
       green_f: "f) Impacto ambiental y en la salud de las sustancias peligrosas", green_f_desc: "Las baterías de iones de litio contienen sustancias que pueden presentar riesgos si se manejan incorrectamente.",
       green_f_li1: "Nunca deseche baterías en el fuego, la basura doméstica o el medio ambiente.", green_f_li2: "La recogida y el reciclaje adecuados ayudan a prevenir la contaminación y permiten recuperar materiales valiosos.",
       yellow_title: "Advertencia de seguridad", yellow_li1: "Mantener alejado de altas temperaturas.", yellow_li2: "No usar si está sumergido en agua.", yellow_li3: "No abrir, aplastar, perforar ni quemar.", yellow_li4: "Dejar de usar si está hinchado o dañado.",
+      doc_title: "Declaración de conformidad",
+      doc_desc: "Este producto cumple con los requisitos de la legislación aplicable de la Unión Europea. La Declaración de Conformidad (DoC) se puede ver a continuación; el PDF está disponible en la página de declaración.",
+      doc_btn: "Ver",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Cumple con el Reglamento (UE) 2023/1542 (Reglamento de Baterías de la UE)"
     },
     // 意大利语
@@ -555,6 +592,9 @@
       green_f: "f) Impatto ambientale e sanitario delle sostanze pericolose", green_f_desc: "Le batterie agli ioni di litio contengono sostanze che possono presentare rischi se gestite in modo improprio.",
       green_f_li1: "Non smaltire mai le batterie nel fuoco, nei rifiuti domestici o nell'ambiente naturale.", green_f_li2: "Una corretta raccolta e riciclaggio aiutano a prevenire l'inquinamento e consentono il recupero di materiali preziosi.",
       yellow_title: "Avvertenza di sicurezza", yellow_li1: "Tenere lontano da alte temperature.", yellow_li2: "Non utilizzare se immerso in acqua.", yellow_li3: "Non aprire, schiacciare, perforare o bruciare.", yellow_li4: "Interrompere l'uso se gonfio o danneggiato.",
+      doc_title: "Dichiarazione di conformità",
+      doc_desc: "Questo prodotto è conforme ai requisiti della legislazione applicabile dell'Unione europea. La Dichiarazione di conformità (DoC) può essere visualizzata di seguito; il PDF è disponibile nella pagina della dichiarazione.",
+      doc_btn: "Visualizza",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Conforme al Regolamento (UE) 2023/1542 (Regolamento sulle batterie dell'UE)"
     },
     // 荷兰语
@@ -584,6 +624,9 @@
       green_f: "f) Milieu- en gezondheidseffecten van gevaarlijke stoffen", green_f_desc: "Lithium-ionbatterijen bevatten stoffen die risico's kunnen vormen als ze onjuist worden behandeld.",
       green_f_li1: "Gooi batterijen nooit in vuur, bij het huisvuil of in de natuur.", green_f_li2: "Goede inzameling en recycling helpen milieuvervuiling te voorkomen en waardevolle materialen terug te winnen.",
       yellow_title: "Veiligheidswaarschuwing", yellow_li1: "Uit de buurt van hoge temperaturen houden.", yellow_li2: "Niet gebruiken als het onder water is gedompeld.", yellow_li3: "Niet openen, pletten, doorboren of verbranden.", yellow_li4: "Stop met gebruiken als het opgezwollen of beschadigd is.",
+      doc_title: "Verklaring van overeenstemming",
+      doc_desc: "Dit product voldoet aan de vereisten van de toepasselijke wetgeving van de Europese Unie. De Verklaring van Overeenstemming (DoC) kan hieronder worden bekeken; de PDF is beschikbaar op de verklaringspagina.",
+      doc_btn: "Bekijken",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Voldoet aan Verordening (EU) 2023/1542 (EU-batterijverordening)"
     },
     // 葡萄牙语
@@ -613,6 +656,9 @@
       green_f: "f) Impacto Ambiental e na Saúde de Substâncias Perigosas", green_f_desc: "As baterias de íons de lítio contêm substâncias que podem apresentar riscos se manuseadas incorretamente.",
       green_f_li1: "Nunca descarte baterias no fogo, lixo doméstico ou no meio ambiente.", green_f_li2: "A coleta e reciclagem adequadas ajudam a prevenir a poluição e permitem a recuperação de materiais valiosos.",
       yellow_title: "Aviso de Segurança", yellow_li1: "Mantenha longe de altas temperaturas.", yellow_li2: "Não use se estiver submerso em água.", yellow_li3: "Não abra, esmague, fure ou queime.", yellow_li4: "Pare de usar se estiver inchado ou danificado.",
+      doc_title: "Declaração de Conformidade",
+      doc_desc: "Este produto está em conformidade com os requisitos da legislação aplicável da União Europeia. A Declaração de Conformidade (DoC) pode ser visualizada abaixo; o PDF está disponível na página de declaração.",
+      doc_btn: "Visualizar",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Em conformidade com o Regulamento (UE) 2023/1542 (Regulamento de Baterias da UE)"
     },
     // 波兰语
@@ -642,6 +688,9 @@
       green_f: "f) Wpływ substancji niebezpiecznych na środowisko i zdrowie", green_f_desc: "Akumulatory litowo-jonowe zawierają substancje, które mogą stwarzać ryzyko, jeśli są niewłaściwie obsługiwane.",
       green_f_li1: "Nigdy nie wyrzucaj baterii do ognia, odpadów domowych ani do środowiska naturalnego.", green_f_li2: "Prawidłowa zbiórka i recykling pomagają zapobiegać zanieczyszczeniu środowiska i umożliwiają odzyskiwanie cennych materiałów.",
       yellow_title: "Ostrzeżenie o bezpieczeństwie", yellow_li1: "Trzymać z dala od wysokich temperatur.", yellow_li2: "Nie używać, jeśli jest zanurzony w wodzie.", yellow_li3: "Nie otwierać, nie zgniatać, nie przekłuwać ani nie palić.", yellow_li4: "Zaprzestać używania, jeśli bateria jest spuchnięta lub uszkodzona.",
+      doc_title: "Deklaracja zgodności",
+      doc_desc: "Ten produkt jest zgodny z wymogami obowiązującego prawodawstwa Unii Europejskiej. Deklaracja zgodności (DoC) jest dostępna poniżej; plik PDF można znaleźć na stronie deklaracji.",
+      doc_btn: "Zobacz",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Zgodne z Rozporządzeniem (UE) 2023/1542 (Rozporządzenie bateryjne UE)"
     },
     // 瑞典语
@@ -671,6 +720,9 @@
       green_f: "f) Miljö- och hälsoeffekter av farliga ämnen", green_f_desc: "Litiumjonbatterier innehåller ämnen som kan innebära risker om de hanteras felaktigt.",
       green_f_li1: "Kassera aldrig batterier i eld, hushållsavfall eller i naturen.", green_f_li2: "Korrekt insamling och återvinning hjälper till att förhindra miljöföroreningar och möjliggör återvinning av värdefulla material.",
       yellow_title: "Säkerhetsvarning", yellow_li1: "Håll borta från höga temperaturer.", yellow_li2: "Använd inte om det är nedsänkt i vatten.", yellow_li3: "Öppna inte, krossa, punktera eller bränn.", yellow_li4: "Sluta använda om det är svullet eller skadat.",
+      doc_title: "Försäkran om överensstämmelse",
+      doc_desc: "Denna produkt överensstämmer med kraven i tillämplig EU-lagstiftning. Försäkran om överensstämmelse (DoC) kan visas nedan; PDF-filen finns på deklarationssidan.",
+      doc_btn: "Visa",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Överensstämmer med förordning (EU) 2023/1542 (EU:s batteriförordning)"
     },
     // 丹麦语
@@ -700,6 +752,9 @@
       green_f: "f) Miljø- og sundhedsmæssig indvirkning af farlige stoffer", green_f_desc: "Lithium-ion batterier indeholder stoffer, der kan udgøre risici, hvis de håndteres forkert.",
       green_f_li1: "Bortskaf aldrig batterier i ild, husholdningsaffald eller i naturen.", green_f_li2: "Korrekt indsamling og genbrug hjælper med at forhindre miljøforurening og muliggør genindvinding af værdifulde materialer.",
       yellow_title: "Sikkerhedsadvarsel", yellow_li1: "Hold væk fra høje temperaturer.", yellow_li2: "Må ikke bruges, hvis det er nedsænket i vand.", yellow_li3: "Må ikke åbnes, knuses, punkteres eller brændes.", yellow_li4: "Stop med at bruge det, hvis det er opsvulmet eller beskadiget.",
+      doc_title: "Overensstemmelseserklæring",
+      doc_desc: "Dette produkt overholder kravene i den gældende EU-lovgivning. Overensstemmelseserklæringen (DoC) kan ses nedenfor; PDF-filen er tilgængelig på erklæringssiden.",
+      doc_btn: "Vis",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Overholder forordning (EU) 2023/1542 (EU's batteriforordning)"
     },
     // 芬兰语
@@ -729,6 +784,9 @@
       green_f: "f) Vaarallisten aineiden ympäristö- ja terveysvaikutukset", green_f_desc: "Litiumioniakut sisältävät aineita, jotka voivat aiheuttaa riskejä, jos niitä käsitellään väärin.",
       green_f_li1: "Älä koskaan hävitä akkuja tuleen, sekajätteeseen tai luontoon.", green_f_li2: "Asianmukainen keräys ja kierrätys auttavat estämään ympäristön saastumista ja mahdollistavat arvokkaiden materiaalien talteenoton.",
       yellow_title: "Turvavaroitus", yellow_li1: "Pidä poissa korkeilta lämpötiloilta.", yellow_li2: "Älä käytä, jos se on upotettu veteen.", yellow_li3: "Älä avaa, murskaa, lävistä tai polta.", yellow_li4: "Lopeta käyttö, jos se on turvonnut tai vaurioitunut.",
+      doc_title: "Vaatimustenmukaisuusvakuutus",
+      doc_desc: "Tämä tuote on sovellettavan Euroopan unionin lainsäädännön vaatimusten mukainen. Vaatimustenmukaisuusvakuutus (DoC) on katseltavissa alla; PDF on saatavilla vakuutussivulla.",
+      doc_btn: "Näytä",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Noudattaa asetusta (EU) 2023/1542 (EU:n akkuasetus)"
     },
     // 挪威语
@@ -758,6 +816,9 @@
       green_f: "f) Miljø- og helsepåvirkning av farlige stoffer", green_f_desc: "Litium-ion-batterier inneholder stoffer som kan utgjøre risiko hvis de håndteres feil.",
       green_f_li1: "Kast aldri batterier i brann, husholdningsavfall eller i naturen.", green_f_li2: "Riktig innsamling og resirkulering bidrar til å forhindre miljøforurensning og muliggjør gjenvinning av verdifulle materialer.",
       yellow_title: "Sikkerhetsadvarsel", yellow_li1: "Hold borte fra høye temperaturer.", yellow_li2: "Skal ikke brukes hvis det er nedsenket i vann.", yellow_li3: "Ikke åpne, knuse, punktere eller brenne.", yellow_li4: "Slutt å bruke hvis det er hovent eller skadet.",
+      doc_title: "Samsvarserklæring",
+      doc_desc: "Dette produktet samsvarer med kravene i gjeldende EU-lovgivning. Samsvarserklæringen (DoC) kan vises nedenfor; PDF-filen er tilgjengelig på erklæringssiden.",
+      doc_btn: "Vis",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>Samsvarer med forordning (EU) 2023/1542 (EUs batteriforordning)"
     },
     // 克罗地亚语
@@ -787,6 +848,9 @@
       green_f: "f) Utjecaj opasnih tvari na okoliš i zdravlje", green_f_desc: "Litij-ionske baterije sadrže tvari koje mogu predstavljati rizik za ljudsko zdravlje i okoliš ako se njima nepravilno rukuje.",
       green_f_li1: "Nikada ne odlažite baterije u vatru, kućni otpad ili prirodni okoliš.", green_f_li2: "Pravilno prikupljanje i recikliranje pomažu u sprječavanju onečišćenja okoliša i omogućuju oporabu vrijednih materijala.",
       yellow_title: "Sigurnosno upozorenje", yellow_li1: "Držite podalje od visokih temperatura.", yellow_li2: "Ne koristite ako je uronjena u vodu.", yellow_li3: "Ne otvarajte, ne drobite, ne bušite i ne spaljujte.", yellow_li4: "Prekinite s uporabom ako je baterija natečena ili oštećena.",
+      doc_title: "Izjava o sukladnosti",
+      doc_desc: "Ovaj proizvod u skladu je sa zahtjevima primjenjivog zakonodavstva Europske unije. Izjava o sukladnosti (DoC) može se pregledati u nastavku; PDF je dostupan na stranici izjave.",
+      doc_btn: "Prikaži",
       footer_text: "Dongguan Baijiaying Electronic Technology Co., Ltd.<br>U skladu s Uredbom (EU) 2023/1542 (Uredba EU o baterijama)"
     }
   };
